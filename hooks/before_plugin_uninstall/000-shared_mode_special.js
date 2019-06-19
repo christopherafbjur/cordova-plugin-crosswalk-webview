@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
 module.exports = function(context) {
-
     /** @external */
-    var deferral = context.requireCordovaModule('q').defer(),
-        UpdateConfig = require('./../update_config.js'),
+    var deferral = require("q").defer(),
+        UpdateConfig = require("./../update_config.js"),
         updateConfig = new UpdateConfig(context);
 
     /** Main method */
@@ -18,5 +17,4 @@ module.exports = function(context) {
     main();
 
     return deferral.promise;
-
 };
